@@ -1,0 +1,45 @@
+Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  /home/chihab/Documents/BabylonJSProjects/babelJS/public/meshes/
+	Python World class constructor completed
+	processing begun of mesh:  ground
+		processing begun of material:  Material.001
+		processing begun of material:  tree_leaves
+		processing begun of material:  tree_trunk
+		processing begun of material:  wood
+		processing begun of material:  clay
+		processing begun of material:  roof_top_paving
+		processing begun of material:  water
+		processing begun of material:  dirt
+		processing begun of material:  Material
+			processing texture ground
+				WARNING: Exception during copy:
+					'/home/chihab/Documents/BlenderProjects/../BabylonJSProjects/babelJS/public/meshes/ground.png' and '/home/chihab/Documents/BabylonJSProjects/babelJS/public/meshes/ground.png' are the same file
+				texture type:  diffuseTexture, mapped using: "UVMap"
+			processing texture hills
+				WARNING: Exception during copy:
+					'/home/chihab/Documents/BlenderProjects/../BabylonJSProjects/babelJS/public/meshes/hills.png' and '/home/chihab/Documents/BabylonJSProjects/babelJS/public/meshes/hills.png' are the same file
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		processing begun of multimaterial:  platform1.Multimaterial#0
+		num positions      :  87908
+		num normals        :  87908
+		num tangents       :  0
+		num uvs            :  175816
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  110370
+		WARNING: # of 0 area faces found:  459
+========= Writing of JSON file started =========
+	writing mesh:  ground
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 5.0709 secs
