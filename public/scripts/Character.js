@@ -129,7 +129,7 @@ class Character{
 		let _this = this;
 		window.addEventListener("keyup", function(evt) {
 			switch(evt.keyCode){
-				case 69:
+				case 170:
 					_this.canPickItem(scene);
 			}
 		}, false);
@@ -163,6 +163,11 @@ class Character{
 		document.addEventListener("mspointerlockchange", pointerlockchange, false);
 		document.addEventListener("mozpointerlockchange", pointerlockchange, false);
 		document.addEventListener("webkitpointerlockchange", pointerlockchange, false);
+	}
+
+	unlockPointer(){
+		document.exitPointerLock = document.exitPointerLock || document.mozExitPointerLock;
+		document.exitPointerLock();
 	}
 
 

@@ -176,11 +176,13 @@ class Game extends Subscriber{
 											this.soundManager.playSound("activate_activatable");
 												this.gui.hideDetails();
 												if(this.currentLevelNumber < lengthOf(this.levelConfigs)){
+													this.character.unlockPointer();
 													this.gui.communicate("Level Completed. You are now one huge step closer to the destination!", null, () => {
 														this.gui.showDetails();
 														this.levelUp();
 													});
 												} else{
+													this.character.unlockPointer();
 													this.gui.communicate("All levels Completed! We thank you for playing this demo, and happily announce that more will come up soon.", null, () => {
 														if(this.currentLevelNumber < lengthOf(this.levelConfigs)){
 															this.levelUp();
@@ -193,6 +195,7 @@ class Game extends Subscriber{
 										case "unlockable":
 										case "door":
 											this.soundManager.playSound(`${notification.observable.onMissingCodeMessage}_${notification.observable.getName()}`);
+											this.character.unlockPointer();
 											this.gui.communicate("You have just unlocked a treasure chest.", notification.observable.getName(), () => {});
 											notification.observable.replaceMesh(this.scene, this.meshManager.getReplacementMeshByName(notification.observable.getName()), this.interactiveObserver, this.character, this.objectManager);
 											break;
@@ -201,11 +204,13 @@ class Game extends Subscriber{
 									this.objectManager.disposeObjectById(tool.getId(), this.scene);
 								});
 							} else if(!notification.observable.isOpened()){
+								this.character.unlockPointer();
 								this.gui.communicate(`You do not have the tool to ${notification.observable.onMissingCodeMessage} this ${notification.observable.getName()}.`);
 							}
 							break;
 						case "npc":
 							this.gui.showPromptBox((message) => {
+								this.character.unlockPointer();
 								this.gui.communicate(notification.observable.respond(message), "key", () => {});
 							});
 							break;
@@ -216,6 +221,7 @@ class Game extends Subscriber{
 				this.character.collect(notification.observable);
 				this.gui.addItem({id: notification.observable.getId(), name: notification.observable.getName()});
 				notification.observable.hide(this.scene);
+				this.character.unlockPointer();
 				switch (notification.observable.getName()){
 					case "gold":
 						this.soundManager.playSound("collect_collectable");

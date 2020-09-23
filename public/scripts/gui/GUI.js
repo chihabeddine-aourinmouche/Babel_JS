@@ -97,12 +97,12 @@ class GUI extends Subscriber{
 		look.appendChild(mouseMoveDescription);
 
 		let interact = div("control");
-		let mouseClick = img(null, null, "../images/mouse_click.png", "Mouse Click");
-		mouseClick.setAttribute("ondragstart", "return false;");
-		mouseClick.setAttribute("ondrop", "return false;");
-		let mouseClickDescription = p(null, null, "Click the mouse buttons to interact with objects.");
-		interact.appendChild(mouseClick);
-		interact.appendChild(mouseClickDescription);
+		let interact_key = img(null, null, "../images/interact_key.png", "E Key");
+		interact_key.setAttribute("ondragstart", "return false;");
+		interact_key.setAttribute("ondrop", "return false;");
+		let interact_keyDescription = p(null, null, "Press the asterisk buttons (*) to interact with objects.");
+		interact.appendChild(interact_key);
+		interact.appendChild(interact_keyDescription);
 
 		this.controlPage.appendChild(moveControls);
 		this.controlPage.appendChild(look);
