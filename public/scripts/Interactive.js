@@ -9,6 +9,7 @@ class Interactive extends Meshable{
 		window.addEventListener("keyup", function(evt) {
 			switch(evt.keyCode){
 				case 170:
+				case 220:
 					if(scene.getMeshByUniqueID(_this.id) === character.itemPicked){
 						_this.notifyObserver(observer, _this.action);
 						character.itemPicked = null;

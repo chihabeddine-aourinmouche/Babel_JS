@@ -130,6 +130,7 @@ class Character{
 		window.addEventListener("keyup", function(evt) {
 			switch(evt.keyCode){
 				case 170:
+				case 220:
 					_this.canPickItem(scene);
 			}
 		}, false);
